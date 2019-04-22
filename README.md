@@ -18,3 +18,6 @@
 
 * Windows PreBuild 執行檔
 1. https://www.dropbox.com/s/gw6pl63pn8dnmyp/ytcapture.zip?dl=0 把預先編譯靜態化的執行檔(windows only - windows 7 and windows 10 測試 OK)
+
+* 直接雙擊畫面會把截圖儲存到使用者桌面目錄
+* 畫面下方有選單可以選擇目前預設的 youtube 新聞頻道
