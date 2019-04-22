@@ -1,11 +1,9 @@
 # coding=utf-8
 
-from subprocess import TimeoutExpired
 from io import BytesIO
 import ffmpeg
 import youtube_dl
 import json
-import time
 
 _settings = []
 with open('settings.json', mode='r', encoding='utf8') as f:
