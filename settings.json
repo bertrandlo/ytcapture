@@ -1,0 +1,22 @@
+{
+  "interval": 5,
+  "channels": {
+    "中天新聞台":{
+      "url": "https://www.youtube.com/watch?v=wUPPkSANpyo",
+      "quality": "1080"
+    },
+    "中視新聞台":{
+      "url": "https://www.youtube.com/watch?v=EZpYJeFfb7U",
+      "quality": "1080"
+    },
+    "東森新聞台":{
+      "url": "https://www.youtube.com/watch?v=dxpWqjvEKaM",
+      "quality": "1080"
+    },
+    "TVBS新聞台":{
+      "url": "https://www.youtube.com/watch?v=Hu1FkdAOws0",
+      "quality": "1080"
+    }
+  }
+
+}

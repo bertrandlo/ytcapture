@@ -1,0 +1,10 @@
+Click==7.0
+PyQt5==5.10.1
+PyQt5-sip==4.19.15
+pyqt5-tools==5.10.1.1.4
+PyQt5Designer==5.10.1
+python-dotenv==0.10.1
+sip==4.19.8
+pillow==6.0.0
+ffmpeg-python==0.1.17
+numpy>=1.16.2

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="/" >
+    <file>resources/box-multi-size.ico</file> //若是在其他目錄
+  </qresource>
+</RCC>
