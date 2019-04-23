@@ -11,7 +11,10 @@ def bytes_to_image(bytes_object: BytesIO):
         frame = np.frombuffer(bytes_object.getbuffer(), np.uint8).reshape([1080, 1920, 3])
         return Image.fromarray(np.uint8(frame))
 
-    except (TypeError, AttributeError):
+    except (TypeError, AttributeError, ValueError):
+        """
+            ValueError -> No Frame
+        """
         return None
 
 

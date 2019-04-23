@@ -37,10 +37,12 @@ class PipeWorker(QThread):
         self.url = ""
         self.proc_ffmpeg = yt_capture(list(settings["channels"].keys())[0])
         self.channel_name = list(settings["channels"].keys())[0]
+        self.signal_terminate.connect(self.terminate)
 
     @pyqtSlot()
     def terminate(self,):
-        pass
+        self.flag_terminate = True
+        self.channel_name = None
 
     def run(self):
 

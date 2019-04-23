@@ -4,6 +4,10 @@ from io import BytesIO
 import ffmpeg
 import youtube_dl
 import json
+import time
+from PyQt5.QtCore import pyqtSignal
+from concurrent import futures
+from queue import LifoQueue, Full, Empty
 
 _settings = []
 with open('settings.json', mode='r', encoding='utf8') as f:
@@ -32,16 +36,36 @@ def yt_streaming(channel_name):
     return proc
 
 
-def yt_capture(channel_name):
+def proxy_frame_counter(proc, frame_queue: LifoQueue):
 
+    print("proc", proc)
+    frame = proc.stdout.read(1920 * 1080 * 3)
+    try:
+        frame_queue.put(frame, block=False, timeout=_settings["interval"])
+    except Full:
+        pass
+
+
+def yt_capture(channel_name):
+    frame_queue = LifoQueue(maxsize=2)
+    interval = int(_settings["interval"])
     proc = yt_streaming(channel_name)
+    count = 0
 
     while True:
+        bytes_object = BytesIO()
+        proxy_frame_counter(proc, frame_queue)
         try:
-            bytes_object = BytesIO()
-            bytes_object.write(proc.stdout.read(1920*1080*3))
-            checkvalue = yield bytes_object
+            frame_bytes = frame_queue.get(block=True, timeout=interval)
+        except Empty:
+            break
 
+        if (time.time() - count) >= interval:
+            bytes_object.write(frame_bytes)
+            count = time.time()
+
+        try:
+            checkvalue = yield bytes_object
         except (TypeError, AttributeError):
             yield None
 
