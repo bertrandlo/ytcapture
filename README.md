@@ -21,3 +21,4 @@
 
 * 直接雙擊畫面會把截圖儲存到使用者桌面目錄
 * 畫面下方有選單可以選擇目前預設的 youtube 新聞頻道
+* 參考 https://blog.csdn.net/doujiang_zheng/article/details/78635725  利用 sparse-checkout 只同步 yotube-dl/yotube_dl 子目錄

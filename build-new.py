@@ -6,13 +6,12 @@ from cx_Freeze import setup, Executable
 os.environ['TCL_LIBRARY'] = r'C:\Program Files\Python36\tcl\tcl8.6'
 os.environ['TK_LIBRARY'] = r'C:\Program Files\Python36\tcl\tk8.6'
 
-includes = ["PyQt5", "numpy", "youtube_dl\\youtube_dl"]
+includes = ["numpy", "youtube_dl\\youtube_dl"]
 base = "C:\\\\Users\\brt\\PycharmProjects\\ytcapture\\venv\\"
-build_exe_options = {"packages": ["os", "numpy", "encodings", "asyncio"],
+build_exe_options = {"packages": ["PyQt5", "os", "numpy", "encodings", "asyncio"],
+                    #'build_exe': "b:\\",
                     'includes': includes,
-                    'include_files': ["settings.json", "icon.qrc", "icon_qrc.py", "ffmpeg.exe", "resources\\box-multi-size.ico", "resources\\loading.png"],
-                     #"zip_include_packages": ["PyQt5"],
-                     'bin_excludes': ["Qt5WebEngineCore.dll"]}
+                    'include_files': ["settings.json", "icon.qrc", "icon_qrc.py", "ffmpeg.exe", "resources\\", "youtube_dl\\"]}
 
 # GUI applications require a different base on Windows (the default is for a
 # console application).
