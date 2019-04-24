@@ -2,7 +2,7 @@
 
 from io import BytesIO
 import ffmpeg
-import youtube_dl
+from youtube_dl import youtube_dl
 import json
 import time
 from PyQt5.QtCore import pyqtSignal
