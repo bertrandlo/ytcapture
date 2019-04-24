@@ -16,8 +16,8 @@
 2. 下載 ffmpeg static 版本 - 解壓縮後放入目錄內 windows link (https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20190421-6e0488c-win64-static.zip)
 3. 如果需要修改 拉取視訊框的 『時間間隔』 與 『頻道設定』， 請直接修改 settings.json 裡面的 interval 與 channels 兩個項目即可
 
-* Windows PreBuild 執行檔
-1. https://www.dropbox.com/s/gw6pl63pn8dnmyp/ytcapture.zip?dl=0 把預先編譯靜態化的執行檔(windows only - windows 7 and windows 10 測試 OK)
+* Windows PreBuild 執行檔 - 改用 pyinstaller 靜態化
+1. https://www.dropbox.com/s/spydypyr9hhfrl6/ytcapture_20190425.zip?dl=0  把預先編譯靜態化的執行檔(windows only - windows 7 and windows 10 測試 OK)
 
 * 直接雙擊畫面會把截圖儲存到使用者桌面目錄
 * 畫面下方有選單可以選擇目前預設的 youtube 新聞頻道
