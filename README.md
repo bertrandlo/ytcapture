@@ -21,4 +21,12 @@
 
 * 直接雙擊畫面會把截圖儲存到使用者桌面目錄
 * 畫面下方有選單可以選擇目前預設的 youtube 新聞頻道
-* 參考 https://blog.csdn.net/doujiang_zheng/article/details/78635725  利用 sparse-checkout 只同步 yotube-dl/yotube_dl 子目錄
+* 利用 sparse-checkout 只同步 yotube-dl/yotube_dl 子目錄
+<pre><code>
+    git init youtube_dl
+    cd youtube_dl
+    git config core.sparsecheckout true
+    echo youtube_dl/* >> .git/info/sparse-checkout
+    git remote add origin https://github.com/ytdl-org/youtube-dl
+    git pull origin master
+</code></pre>
